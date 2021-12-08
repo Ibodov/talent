@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.smile.talent_official.ui.start.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_employerFragment"
+            app:destination="@id/employerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workerFragment"
+        android:name="com.smile.talent_official.ui.worker.AddWorkerFragment"
+        android:label="fragment_worker"
+        tools:layout="@layout/fragment_worker" >
+        <action
+            android:id="@+id/action_workerFragment_to_startFragment2"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.smile.talent_official.ui.main_fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_workerFragment"
+            app:destination="@id/workerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employerFragment"
+        android:name="com.smile.talent_official.ui.detail.EmployerFragment"
+        android:label="fragment_employer"
+        tools:layout="@layout/fragment_employer" >
+        <action
+            android:id="@+id/action_employerFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneNumbersFragment"
+        android:name="com.smile.talent_official.ui.phone_numbers.PhoneNumbersFragment"
+        android:label="fragment_phone_numbers"
+        tools:layout="@layout/fragment_phone_numbers" />
+</navigation>
